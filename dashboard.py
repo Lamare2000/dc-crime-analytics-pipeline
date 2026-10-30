@@ -125,7 +125,7 @@ tab1, tab2, tab3 = st.tabs(["🗺️ Geospatial Map", "📊 Temporal Analysis", 
 with tab1:
     st.subheader("Incident Map Visualization")
     if not filtered_df.empty and 'LATITUDE' in filtered_df.columns:
-        fig_map = px.scatter_mapbox(
+        fig_map = px.scatter_map(
             filtered_df, lat="LATITUDE", lon="LONGITUDE", color="OFFENSE",
             hover_data=["OFFENSE", "METHOD", "DISTRICT", "REPORT_DATE"],
             zoom=10, height=500, mapbox_style="carto-positron"
